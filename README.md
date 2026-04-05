@@ -1,20 +1,151 @@
-<<<<<<< HEAD
-Smart-Finance-Manager-Application
-=======
-# React + Vite
+# 💰 Finance Dashboard UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and interactive **Finance Dashboard** built to demonstrate frontend development skills including UI design, state management, and data visualization.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Objective
 
-## React Compiler
+This project was developed as part of a frontend evaluation assignment to showcase:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* UI/UX design thinking
+* Component structuring
+* State management
+* Data visualization
 
-## Expanding the ESLint configuration
+The goal was to build a **simple, intuitive, and interactive dashboard** — not a production-level system.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 669e6d9 (Initial commit - Finance Dashboard)
+---
+
+## 🚀 Live Demo
+
+👉 https://mohithire.github.io/Finance-Application/
+
+---
+
+## 📌 Features
+
+### 📊 Dashboard Overview
+
+* Summary cards:
+
+  * Total Balance
+  * Income
+  * Expenses
+* 📈 Balance Trend (time-based visualization)
+* 🥧 Spending Breakdown (category-based visualization)
+
+---
+
+### 💳 Transactions Section
+
+* Displays:
+
+  * Date
+  * Category
+  * Type (Income / Expense)
+  * Amount
+
+* Features:
+
+  * 🔍 Search by category
+  * 📂 Filter options
+  * 🔽 Sorting (Latest)
+
+---
+
+### 🔐 Role-Based UI (Frontend Simulation)
+
+* **Admin**
+
+  * Can add transactions
+* **Viewer**
+
+  * Read-only access
+
+👉 Role switching available via dropdown for demonstration
+
+---
+
+### 📈 Insights Section
+
+* Total Income & Expenses
+* Net Savings
+* Top Spending Category
+* Smart observations based on data
+
+---
+
+### ⚙️ State Management
+
+Handled using React state:
+
+* Transactions data
+* Filters & search
+* Role selection
+* Theme (Dark/Light)
+
+---
+
+## 🎨 UI / UX Highlights
+
+* Clean and minimal layout
+* Fully responsive design
+* Smooth interaction experience
+* Handles empty states gracefully
+
+---
+
+## 🌙 Optional Enhancements Implemented
+
+* ✅ Dark Mode
+* ✅ Local Storage Persistence
+* ✅ Interactive Charts
+* ✅ Smooth UI transitions
+
+---
+
+## 🛠 Tech Stack
+
+* React (Vite)
+* JavaScript 
+* CSS
+* Recharts (for charts)
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+git clone https://github.com/MohitHire/Finance-Application
+cd Finance-Application
+npm install
+npm run dev
+```
+
+---
+
+## 🧠 Approach
+
+This project focuses on:
+
+* Building reusable components (Sidebar, Header, Cards)
+* Managing state efficiently without over-engineering
+* Keeping UI simple, readable, and scalable
+* Simulating real-world features like role-based access
+
+
+---
+
+## ⚠️ Notes
+
+* This is a frontend-only project using mock data
+* No backend or authentication is implemented
+* Role-based access is simulated for demonstration
+
+---
+
+## 👨‍💻 Author
+
+**Mohit Hire**
+

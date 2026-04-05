@@ -11,7 +11,7 @@ const Insights = ({ transactions, dark }) => {
 
   const savings = income - expenses;
 
-  // Category breakdown
+  
   const categoryMap = {};
   transactions
     .filter((t) => t.type === "expense")
@@ -45,7 +45,7 @@ const Insights = ({ transactions, dark }) => {
           <p style={styles.value}>₹ {income.toLocaleString()}</p>
         </div>
 
-        {/* TOTAL EXPENSE */}
+        
         <div style={card(dark)}>
           <h4>Total Expenses</h4>
           <p style={styles.value}>₹ {expenses.toLocaleString()}</p>
@@ -64,7 +64,7 @@ const Insights = ({ transactions, dark }) => {
           </p>
         </div>
 
-        {/* TOP CATEGORY */}
+        
         <div style={card(dark)}>
           <h4>Top Spending Category</h4>
           {topCategory ? (
@@ -76,7 +76,7 @@ const Insights = ({ transactions, dark }) => {
           )}
         </div>
 
-        {/* SMART INSIGHT */}
+        
         <div style={{ ...card(dark), gridColumn: "span 2" }}>
           {topCategory ? (
             <p style={{ fontSize: "15px" }}>
@@ -89,7 +89,7 @@ const Insights = ({ transactions, dark }) => {
           )}
         </div>
 
-        {/* FINANCIAL HEALTH */}
+        
         <div style={{ ...card(dark), gridColumn: "span 2" }}>
           <p style={{ fontSize: "15px" }}>
             {savings > 0

@@ -8,7 +8,8 @@ import { transactions as initialData } from "./data/mockData";
 
 function App() {
   const [selected, setSelected] = useState("Dashboard");
-  const [role, setRole] = useState("viewer");
+  // Change default role to "admin" so you can add/edit data immediately
+  const [role, setRole] = useState("admin"); 
   const [dark, setDark] = useState(false);
 
   const [transactions, setTransactions] = useState(() => {
@@ -19,7 +20,14 @@ function App() {
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(transactions));
   }, [transactions]);
-  
+
+  // Helper to reset data if the UI gets stuck or mockData changes
+  const clearData = () => {
+    if (window.confirm("Reset all transactions to default?")) {
+      localStorage.removeItem("transactions");
+      setTransactions(initialData);
+    }
+  };
 
   return (
     <div
@@ -38,6 +46,7 @@ function App() {
           setRole={setRole}
           dark={dark}
           setDark={setDark}
+          clearData={clearData} // Passing this to Header
         />
 
         <div style={styles.content}>

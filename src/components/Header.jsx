@@ -1,23 +1,26 @@
 import React from "react";
 
-const Header = ({ selected, role, setRole, dark, setDark }) => {
+const Header = ({ selected, role, setRole, dark, setDark, userName = "Mohit G. Hire" }) => {
+  // Dynamic styles based on theme
+  const themeStyles = {
+    background: dark ? "#111827" : "#ffffff",
+    color: dark ? "#f9fafb" : "#111827",
+    borderBottom: dark ? "1px solid #374151" : "1px solid #e5e7eb",
+    boxShadow: dark ? "0 4px 6px -1px rgba(0, 0, 0, 0.2)" : "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+  };
+
   return (
-    <div
-      style={{
-        ...styles.header,
-        background: dark ? "#1f2937" : "#fff",
-        color: dark ? "#fff" : "#000",
-      }}
-    >
+    <header style={{ ...styles.header, ...themeStyles }}>
       {/* PAGE TITLE */}
-      <h2 style={{ margin: 0 }}>{selected}</h2>
+      <h2 style={styles.title}>{selected}</h2>
 
       {/* RIGHT SIDE */}
       <div style={styles.right}>
         {/* DARK MODE TOGGLE */}
         <button
           onClick={() => setDark(!dark)}
-          style={styles.iconBtn}
+          style={{ ...styles.iconBtn, background: dark ? "#374151" : "#f3f4f6" }}
+          aria-label="Toggle Dark Mode"
         >
           {dark ? "🌙" : "☀️"}
         </button>
@@ -30,19 +33,20 @@ const Header = ({ selected, role, setRole, dark, setDark }) => {
             ...styles.select,
             background: dark ? "#374151" : "#fff",
             color: dark ? "#fff" : "#000",
+            borderColor: dark ? "#4b5563" : "#d1d5db",
           }}
         >
           <option value="viewer">Viewer</option>
           <option value="admin">Admin</option>
         </select>
 
-        {/* USER */}
+        {/* USER PROFILE */}
         <div style={styles.user}>
-          <div style={styles.avatar}>U</div>
-          <span>User</span>
+          <div style={styles.avatar}>{userName.charAt(0)}</div>
+          <span style={styles.userName}>{userName}</span>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
@@ -52,48 +56,63 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "0 20px",
-    borderBottom: "1px solid #374151",
+    padding: "0 24px",
+    transition: "all 0.3s ease",
   },
-
+  title: {
+    margin: 0,
+    fontSize: "1.25rem",
+    fontWeight: "700",
+    letterSpacing: "-0.025em",
+  },
   right: {
     display: "flex",
     alignItems: "center",
-    gap: "10px",
+    gap: "16px",
   },
-
   iconBtn: {
-    padding: "8px",
-    borderRadius: "8px",
+    padding: "10px",
+    borderRadius: "10px",
     border: "none",
     cursor: "pointer",
+    fontSize: "1.2rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "background 0.2s",
   },
-
   select: {
-    padding: "6px",
-    borderRadius: "6px",
-    border: "1px solid #ccc",
+    padding: "8px 12px",
+    borderRadius: "8px",
+    border: "1px solid",
+    cursor: "pointer",
+    outline: "none",
+    fontWeight: "500",
   },
-
   user: {
     display: "flex",
     alignItems: "center",
-    gap: "8px",
-    padding: "6px 10px",
-    borderRadius: "20px",
-    background: "#4CAF50",
+    gap: "10px",
+    padding: "4px 12px 4px 6px",
+    borderRadius: "30px",
+    background: "#10b981", // More modern Emerald green
     color: "#fff",
+    cursor: "default",
   },
-
   avatar: {
-    width: "28px",
-    height: "28px",
+    width: "32px",
+    height: "32px",
     borderRadius: "50%",
-    background: "#2e7d32",
+    background: "rgba(0,0,0,0.2)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontWeight: "bold",
+    fontSize: "0.9rem",
+  },
+  userName: {
+    fontSize: "0.9rem",
+    fontWeight: "600",
   },
 };
 

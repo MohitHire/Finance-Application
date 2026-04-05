@@ -8,7 +8,7 @@ const Transactions = ({ role, transactions, setTransactions, dark }) => {
   const [editingId, setEditingId] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
 
   const [formData, setFormData] = useState({
     date: new Date().toISOString().split('T')[0], // Default to today

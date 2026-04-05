@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ selected, role, setRole, dark, setDark, userName = "Mohit G. Hire" }) => {
+const Header = ({ selected, role, setRole, dark, setDark, userName = "User" }) => {
   // Dynamic styles based on theme
   const themeStyles = {
     background: dark ? "#111827" : "#ffffff",
@@ -36,6 +36,8 @@ const Header = ({ selected, role, setRole, dark, setDark, userName = "Mohit G. H
             borderColor: dark ? "#4b5563" : "#d1d5db",
           }}
         >
+          
+          
           <option value="viewer">Viewer</option>
           <option value="admin">Admin</option>
         </select>
